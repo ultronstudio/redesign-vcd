@@ -1,0 +1,673 @@
+:root{
+  --bg:#151515;
+  --bg-2:#0e0e0f;
+  --bg-3:#242426;
+  --surface:#ffffff;
+  --surface-2:#f4f4f4;
+  --accent:#b20f35;
+  --accent-2:#c4123a;
+  --text:#f5f5f5;
+  --ink:#171717;
+  --muted:#b7b7b7;
+  --line:#3a3a3d;
+  --content:1320px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.45;
+}
+
+h1,h2,h3{margin:0}
+a{color:inherit}
+.container-xxl{max-width:var(--content)}
+
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{left:0;top:0;z-index:9999;background:#fff;color:#000;padding:.7rem 1rem}
+
+/* header */
+.site-header{
+  background:rgba(24,33,48,.97);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  color:#fff;
+}
+.utility-bar{
+  background:#0b0b0c;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.utility-inner{
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.utility-left,.utility-right{
+  display:flex;
+  gap:18px;
+}
+.utility-bar a{
+  color:#c8d0db;
+  text-decoration:none;
+  font-size:10.5px;
+  font-weight:600;
+}
+.nav-row{
+  height:82px;
+  display:grid;
+  grid-template-columns:320px 1fr auto;
+  gap:24px;
+  align-items:center;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  font-size:16px;
+}
+.brand img{
+  width:44px;
+  height:44px;
+  object-fit:contain;
+}
+.main-nav{
+  height:82px;
+  justify-content:flex-end;
+  align-items:stretch;
+}
+.main-nav a{
+  display:flex;
+  align-items:center;
+  padding:0 14px;
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  border-bottom:3px solid transparent;
+}
+.main-nav a.active,.main-nav a:hover{
+  border-bottom-color:var(--accent-2);
+}
+.header-actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.search-toggle,.menu-toggle{
+  width:40px;height:40px;
+  border:1px solid #454548;
+  background:transparent;
+  color:#fff;
+}
+.account-link{
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  padding:0 13px;
+  border:1px solid #454548;
+  color:#fff;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+}
+.search-panel{
+  padding:12px 0;
+  background:#0b0b0c;
+  border-top:1px solid #2c2c2f;
+}
+.site-search{
+  display:grid;
+  grid-template-columns:1fr 100px;
+  gap:10px;
+}
+.site-search input,.site-search button{height:42px;border-radius:0}
+.site-search input{border:1px solid #515154;background:#fff;padding:0 12px}
+.site-search button{border:0;background:var(--accent);color:#fff;font-weight:700}
+.mobile-nav{display:flex;flex-direction:column}
+.mobile-nav a{color:#fff;text-decoration:none;padding:13px 0;border-bottom:1px solid #3d4656}
+
+/* hero */
+.hero{
+  position:relative;
+  min-height:610px;
+  overflow:hidden;
+  background:#111;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    url("https://www.vcd.cz/public/upload/small_img_0824-edit.jpg") center 35% / cover no-repeat,
+    #111;
+}
+.hero-shade{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(16,22,32,.84) 0%,rgba(16,22,32,.48) 38%,rgba(16,22,32,.16) 64%,rgba(16,22,32,.55) 100%);
+}
+.hero-content{
+  position:relative;
+  min-height:610px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding-bottom:48px;
+}
+.hero-copy{
+  width:580px;
+  margin-bottom:30px;
+}
+.hero-date{
+  font-size:12px;
+  font-weight:700;
+  color:#dddddf;
+}
+.hero-copy h1{
+  margin-top:8px;
+  font-family:"Roboto Slab",Georgia,serif;
+  font-size:56px;
+  line-height:1.02;
+}
+.hero-copy p{
+  margin:10px 0 0;
+  color:#d6d6d8;
+  font-size:14px;
+}
+.hero-actions{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-top:22px;
+}
+.btn-ticket{
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding:12px 16px;
+}
+.btn-text{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:12px;
+}
+.event-search{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) 180px 200px 170px;
+  background:#fff;
+  box-shadow:0 16px 40px rgba(0,0,0,.25);
+}
+.event-search-main{
+  display:grid;
+  grid-template-columns:36px 1fr;
+  align-items:center;
+  padding-left:14px;
+}
+.event-search-main i{color:#757578}
+.event-search input,.event-search select,.event-search button{
+  height:58px;
+  border-radius:0;
+}
+.event-search input{
+  width:100%;
+  border:0;
+  outline:none;
+  padding:0 12px 0 0;
+}
+.event-search select{
+  border:0;
+  border-left:1px solid #dde1e6;
+  padding:0 12px;
+  color:#505054;
+}
+.event-search button{
+  border:0;
+  background:var(--accent);
+  color:#fff;
+  font-weight:800;
+}
+
+/* browse */
+.browse-section{
+  padding:62px 0 72px;
+  background:var(--bg);
+}
+.browse-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px;
+}
+.browse-head h2,.section-head h2{
+  font-size:30px;
+  font-weight:800;
+}
+.browse-tabs{
+  display:flex;
+  gap:8px;
+}
+.browse-tabs button{
+  border:1px solid #4b4b4f;
+  background:transparent;
+  color:#d7d7d9;
+  padding:8px 11px;
+  font-size:11px;
+  font-weight:700;
+}
+.browse-tabs button.active{
+  border-color:var(--accent-2);
+  background:var(--accent-2);
+  color:#fff;
+}
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.event-card{
+  background:var(--surface);
+  color:var(--ink);
+}
+.event-image{
+  height:260px;
+  background-size:cover;
+  background-position:center;
+}
+.img-kuryr{background-image:url("https://www.vcd.cz/public/upload/small_img_0824-edit.jpg")}
+.img-loupez{background-image:url("https://www.vcd.cz/public/upload/small_lo.jpg")}
+.img-kytice{background-image:url("https://www.vcd.cz/public/upload/kytice.jpg")}
+.img-frankenstein{background-image:url("https://www.vcd.cz/public/upload/mlady_frankenstein.jpg")}
+.event-card-body{padding:18px}
+.event-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  color:#7c7c80;
+  font-size:10px;
+  font-weight:600;
+}
+.event-card h3{
+  margin-top:8px;
+  min-height:50px;
+  font-family:"Roboto Slab",Georgia,serif;
+  font-size:20px;
+  line-height:1.25;
+}
+.event-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:18px;
+}
+.event-footer a{
+  color:#49515c;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+}
+.event-footer .event-buy{
+  color:#fff;
+  background:var(--accent);
+  padding:8px 11px;
+}
+.browse-bottom{
+  display:flex;
+  justify-content:center;
+  margin-top:28px;
+}
+.browse-bottom a{
+  color:#fff;
+  border:1px solid #555559;
+  padding:10px 14px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* feature */
+.feature-strip{
+  min-height:360px;
+  display:grid;
+  grid-template-columns:52% 48%;
+  background:#0e1622;
+}
+.feature-image{
+  min-height:360px;
+  background:
+    url("https://www.vcd.cz/public/images/bgr/bgr.jpg") center / cover no-repeat,
+    #111111;
+}
+.feature-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:50px 65px;
+}
+.feature-copy h2{
+  font-family:"Roboto Slab",Georgia,serif;
+  font-size:34px;
+}
+.feature-copy p{
+  max-width:520px;
+  margin:14px 0 0;
+  color:#bcbcbf;
+}
+.feature-copy a{
+  width:max-content;
+  margin-top:20px;
+  color:#fff;
+  text-decoration:none;
+  border-bottom:2px solid var(--accent-2);
+  padding-bottom:4px;
+  font-weight:700;
+}
+
+/* nearest */
+.next-events{
+  padding:62px 0 70px;
+  background:#fff;
+  color:var(--ink);
+}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px;
+}
+.section-head>a{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+}
+.event-row-list{
+  border-top:1px solid #dfe3e8;
+}
+.event-row-list article{
+  min-height:102px;
+  display:grid;
+  grid-template-columns:80px 1fr 80px 90px;
+  gap:18px;
+  align-items:center;
+  border-bottom:1px solid #dfe3e8;
+}
+.event-row-list time{
+  text-align:center;
+  color:var(--accent);
+}
+.event-row-list time strong{
+  display:block;
+  font-size:28px;
+  line-height:1;
+}
+.event-row-list time span{
+  font-size:9px;
+  font-weight:800;
+}
+.event-row-main span{
+  display:block;
+  color:#7c7c80;
+  font-size:10px;
+}
+.event-row-main h3{
+  margin-top:3px;
+  font-family:"Roboto Slab",Georgia,serif;
+  font-size:19px;
+}
+.event-row-list article>a{
+  color:#4d5560;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+}
+.event-row-list .row-buy{
+  background:var(--accent);
+  color:#fff;
+  padding:9px 12px;
+  text-align:center;
+}
+
+/* subscription */
+.subscription-section{
+  padding:62px 0 72px;
+  background:var(--bg-2);
+}
+.subscription-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.subscription-card{
+  position:relative;
+  min-height:300px;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  color:#fff;
+  text-decoration:none;
+  background-size:cover;
+  background-position:center;
+}
+.sub-one{
+  background-image:
+    linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.58)),
+    url("https://www.vcd.cz/public/upload/small_lo.jpg");
+}
+.sub-two{
+  background-image:
+    linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.58)),
+    url("https://www.vcd.cz/public/upload/small_img_0824-edit.jpg");
+}
+.sub-copy{
+  width:100%;
+  padding:26px;
+}
+.sub-copy h3{
+  font-family:"Roboto Slab",Georgia,serif;
+  font-size:25px;
+}
+.sub-copy p{
+  max-width:500px;
+  margin:8px 0 12px;
+  color:#e2e2e4;
+  font-size:12px;
+}
+.sub-copy span{
+  font-size:11px;
+  font-weight:700;
+}
+
+/* news */
+.news-section{
+  padding:62px 0 70px;
+  background:var(--bg);
+}
+.news-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+}
+.news-feature{
+  padding-right:50px;
+  border-right:1px solid var(--line);
+}
+.news-feature time,.news-list time{
+  color:#d96a82;
+  font-size:10px;
+  font-weight:700;
+}
+.news-feature h3{
+  margin:8px 0 12px;
+  font-family:"Roboto Slab",Georgia,serif;
+  font-size:30px;
+}
+.news-feature h3 a,.news-list a{
+  color:#fff;
+  text-decoration:none;
+}
+.news-feature p{color:#bcbcbf}
+.news-list{
+  border-top:1px solid var(--line);
+}
+.news-list article{
+  min-height:76px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+.news-list article>a{
+  display:block;
+  margin-top:4px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* newsletter */
+.newsletter{
+  padding:34px 0;
+  background:#8f0d2b;
+}
+.newsletter-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
+  align-items:center;
+}
+.newsletter h2{font-size:24px}
+.newsletter p{margin:5px 0 0;color:#f0dce1;font-size:12px}
+.newsletter form{
+  display:grid;
+  grid-template-columns:1fr 120px;
+}
+.newsletter input,.newsletter button{
+  height:46px;
+  border-radius:0;
+}
+.newsletter input{
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  padding:0 12px;
+}
+.newsletter input::placeholder{color:#ead8dc}
+.newsletter button{
+  border:1px solid #fff;
+  background:#fff;
+  color:#8f0d2b;
+  font-weight:800;
+}
+
+/* footer */
+.site-footer{
+  padding:38px 0 14px;
+  background:#0b0b0c;
+}
+.footer-main{
+  min-height:130px;
+  display:grid;
+  grid-template-columns:320px repeat(3,1fr);
+  gap:40px;
+}
+.footer-brand{
+  display:flex;
+  gap:13px;
+  align-items:flex-start;
+}
+.footer-brand img{width:46px;height:46px}
+.footer-brand strong{font-size:14px}
+.footer-main>div:not(.footer-brand){
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.footer-main strong{
+  margin-bottom:5px;
+  font-size:12px;
+}
+.footer-main span,.footer-main a{
+  color:#d0d0d2;
+  text-decoration:none;
+  font-size:11px;
+}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding-top:12px;
+  border-top:1px solid #303033;
+  color:#8d8d91;
+  font-size:10px;
+}
+
+@media(max-width:1199.98px){
+  .nav-row{grid-template-columns:300px 1fr auto}
+  .event-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:991.98px){
+  .hero-content{padding-bottom:34px}
+  .event-search{
+    grid-template-columns:1fr 160px;
+  }
+  .event-search-main{grid-column:1/-1}
+  .event-search button{grid-column:1/-1}
+  .feature-strip{grid-template-columns:1fr}
+  .feature-image{min-height:300px}
+  .subscription-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  .news-feature{padding-right:0;border-right:0}
+  .newsletter-grid{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:767.98px){
+  body{font-size:15px}
+  .utility-bar{display:none}
+  .nav-row{height:70px;grid-template-columns:1fr auto}
+  .brand span{font-size:13px}
+  .brand img{width:38px;height:38px}
+  .account-link,.search-toggle{display:none}
+
+  .hero{min-height:560px}
+  .hero-content{min-height:560px}
+  .hero-copy{width:100%}
+  .hero-copy h1{font-size:40px}
+  .event-search{grid-template-columns:1fr}
+  .event-search-main,.event-search button{grid-column:auto}
+  .event-search select{border-left:0;border-top:1px solid #dde1e6}
+
+  .browse-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .browse-tabs{
+    overflow-x:auto;
+    width:100%;
+  }
+  .event-grid{grid-template-columns:1fr}
+
+  .event-row-list article{
+    grid-template-columns:60px 1fr;
+    padding:15px 0;
+  }
+  .event-row-list article>a{
+    grid-column:2;
+    width:max-content;
+  }
+
+  .newsletter form{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column}
+}
